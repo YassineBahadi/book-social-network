@@ -1,0 +1,43 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/book-social-network?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  mail:
+    host: localhost
+    port: 1025
+    username: yassine
+    password: yassine
+    properties:
+      mail:
+        smtp:
+          trust: "*"
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000
+
+  application:
+    security:
+      jwt:
+        secret-key: Q0M5Z2pFNk1wZVR4Q1h2elF4TXZ5UjhVUnV5ZktZQkt2ZXlBTk5aN0YxYkhLSlFkRG9lcFZkWmV0QW5xbTZRRQ==
+        expiration: 604800000
+    mailing:
+      frontend:
+        activation-url: http://localhost:4200/activate-account
+
+    file:
+      upload:
+        photos-output-path: ./uploads
