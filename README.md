@@ -46,9 +46,6 @@ Le projet couvre l'ensemble du cycle de vie d'un produit logiciel : modélisatio
 
 **Le problème résolu** : un lecteur possède des livres qu'il ne relit plus, un autre cherche à les emprunter. L'application gère tout le parcours, de l'inscription jusqu'à l'approbation du retour, avec des règles de disponibilité garanties côté serveur.
 
-> Capture d'écran de l'application : `docs/images/screenshot-home.png`
->
-> ![Aperçu de l'application](docs/images/screenshot-home.png)
 
 ---
 
@@ -103,14 +100,17 @@ flowchart LR
 
 ### Diagrammes
 
-| Diagramme | Fichier |
-|---|---|
-| Diagramme de classes | `diagrammes&pipelines/Diagrammedeclasses.png` |
-| Sécurité Spring | `diagrammes&pipelines/Diagrammedesécurité.png` |
-| Pipeline backend | `diagrammes&pipelines/Pipelinedebackend.png` |
-| Pipeline frontend | `diagrammes&pipelines/Pipelinedefrontend.png` |
+#### Diagramme de classes
+![Diagramme de classes](diagrammes-pipelines/diagramme-de-classes.png)
 
----
+#### Sécurité Spring
+![Diagramme de sécurité Spring](diagrammes-pipelines/diagramme-de-securite.png)
+
+#### Pipeline backend
+![Pipeline backend](diagrammes-pipelines/pipeline-backend.png)
+
+#### Pipeline frontend
+![Pipeline frontend](diagrammes-pipelines/pipeline-frontend.png)
 
 ## Stack technique
 
