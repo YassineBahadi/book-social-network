@@ -181,15 +181,15 @@ public class BookService {
 
     }
 
-    public Integer ApproveReturnBorrowedBook(Integer bookId, Authentication connectedUser) {
+    public Integer approveReturnBorrowedBook(Integer bookId, Authentication connectedUser) {
         Book book=bookRepository.findById(bookId)
                 .orElseThrow(()->new EntityNotFoundException("No book found with the ID:: "+bookId));
         if(book.isArchived() || !book.isShareable()){
             throw  new OperationNotPermittedException("The request book can not be borrowed since it is archived or not shareable");
         }
         User user=((User) connectedUser.getPrincipal());
-        if(Objects.equals(book.getOwner().getId(),user.getId())){
-            throw new OperationNotPermittedException("You can not borrow or return  your own book ");
+        if(!Objects.equals(book.getOwner().getId(),user.getId())){
+            throw new OperationNotPermittedException("You can not return a book that you don't own ");
         }
         BookTransactionHistory bookTransactionHistory=bookTransactionHistoryRepository.findByBookIdAndOwnerId(bookId,user.getId())
                 .orElseThrow(()->new OperationNotPermittedException("The book is not returned yet . You can not approve its return"));

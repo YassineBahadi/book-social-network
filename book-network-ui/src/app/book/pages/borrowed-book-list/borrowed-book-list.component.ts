@@ -4,10 +4,9 @@ import { BorrowedBookResponse, PageResponseBorrowedBookResponse } from '../../..
 import { BookService, FeedBackService } from '../../../services/services';
 import { FormsModule } from '@angular/forms';
 import { RatingComponent } from "../../components/rating/rating.component";
-import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-borrowed-book-list',
-  imports: [FormsModule, RatingComponent, RouterLink],
+  imports: [FormsModule, RatingComponent],
   templateUrl: './borrowed-book-list.component.html',
   styleUrl: './borrowed-book-list.component.scss'
 })
